@@ -10,5 +10,5 @@ Person::Person(string name, string sex, int age)
 
 Person::~Person()
 {
-	cout << "Person::~Person()" << endl;
+	cout << "name:"<<m_name<<", Person::~Person()" << endl;
 }
