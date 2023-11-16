@@ -22,3 +22,9 @@ TaiJi/SmartPointer/Debug/vc141.pdb
 TaiJi/SmartPointer/SmartPointer.vcxproj.filters
 TaiJi/SmartPointer/SmartPointer.vcxproj.user
 /TaiJi/.vs/TaiJi/v16
+/TaiJi/Debug
+/TaiJi/DumpDemo/Debug
+/TaiJi/DumpDemo/Release
+/TaiJi/DumpDemo/DumpDemo.vcxproj.user
+/TaiJi/DumpDemo/DumpDemo.vcxproj.filters
+/TaiJi/Release
