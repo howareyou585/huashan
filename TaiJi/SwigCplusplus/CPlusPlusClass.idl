@@ -1,0 +1,5 @@
+%module SwigCplusplus
+%{
+	#include "CPlusPlusClass.h"
+%}
+%include "CPlusPlusClass.h"
