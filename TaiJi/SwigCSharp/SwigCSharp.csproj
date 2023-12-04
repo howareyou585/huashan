@@ -64,10 +64,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CPlusPlusClass.cs" />
+    <Compile Include="Foo.cs" />
+    <Compile Include="gmeParseObj.cs" />
+    <Compile Include="point3d.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SwigCplusplus.cs" />
     <Compile Include="SwigCplusplusPINVOKE.cs" />
+    <Compile Include="SWIGTYPE_p_int.cs" />
+    <Compile Include="SWIGTYPE_p_std__vectorT_int_t.cs" />
+    <Compile Include="triangle.cs" />
+    <Compile Include="vec3ds.cs" />
+    <Compile Include="vecTris.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

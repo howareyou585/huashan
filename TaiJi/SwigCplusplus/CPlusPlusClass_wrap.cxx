@@ -300,11 +300,223 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_SwigCplusplus(SWIG_CSharp
 
 
 	#include "CPlusPlusClass.h"
+	#include "gmeDefine.h"
+	#include "gmeParseObj.h"
+	using namespace Smart3dMap;
 
+
+#include <string>
+
+
+#include <typeinfo>
+#include <stdexcept>
+
+
+#include <vector>
+#include <algorithm>
+#include <stdexcept>
+
+SWIGINTERN vector< Smart3dMap::point3d > *new_vector_Sl_Smart3dMap_point3d_Sg___SWIG_2(int capacity){
+        std::vector< Smart3dMap::point3d >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< Smart3dMap::point3d >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN Smart3dMap::point3d vector_Sl_Smart3dMap_point3d_Sg__getitemcopy(vector< Smart3dMap::point3d > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN Smart3dMap::point3d const &vector_Sl_Smart3dMap_point3d_Sg__getitem(vector< Smart3dMap::point3d > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_point3d_Sg__setitem(vector< Smart3dMap::point3d > *self,int index,Smart3dMap::point3d const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_point3d_Sg__AddRange(vector< Smart3dMap::point3d > *self,std::vector< Smart3dMap::point3d > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< Smart3dMap::point3d > *vector_Sl_Smart3dMap_point3d_Sg__GetRange(vector< Smart3dMap::point3d > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< Smart3dMap::point3d >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_point3d_Sg__Insert(vector< Smart3dMap::point3d > *self,int index,Smart3dMap::point3d const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_point3d_Sg__InsertRange(vector< Smart3dMap::point3d > *self,int index,std::vector< Smart3dMap::point3d > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_point3d_Sg__RemoveAt(vector< Smart3dMap::point3d > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_point3d_Sg__RemoveRange(vector< Smart3dMap::point3d > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< Smart3dMap::point3d > *vector_Sl_Smart3dMap_point3d_Sg__Repeat(Smart3dMap::point3d const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< Smart3dMap::point3d >(count, value);
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_point3d_Sg__Reverse__SWIG_0(vector< Smart3dMap::point3d > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_point3d_Sg__Reverse__SWIG_1(vector< Smart3dMap::point3d > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_point3d_Sg__SetRange(vector< Smart3dMap::point3d > *self,int index,std::vector< Smart3dMap::point3d > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN vector< Smart3dMap::triangle > *new_vector_Sl_Smart3dMap_triangle_Sg___SWIG_2(int capacity){
+        std::vector< Smart3dMap::triangle >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< Smart3dMap::triangle >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN Smart3dMap::triangle vector_Sl_Smart3dMap_triangle_Sg__getitemcopy(vector< Smart3dMap::triangle > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN Smart3dMap::triangle const &vector_Sl_Smart3dMap_triangle_Sg__getitem(vector< Smart3dMap::triangle > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_triangle_Sg__setitem(vector< Smart3dMap::triangle > *self,int index,Smart3dMap::triangle const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_triangle_Sg__AddRange(vector< Smart3dMap::triangle > *self,std::vector< Smart3dMap::triangle > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< Smart3dMap::triangle > *vector_Sl_Smart3dMap_triangle_Sg__GetRange(vector< Smart3dMap::triangle > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< Smart3dMap::triangle >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_triangle_Sg__Insert(vector< Smart3dMap::triangle > *self,int index,Smart3dMap::triangle const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_triangle_Sg__InsertRange(vector< Smart3dMap::triangle > *self,int index,std::vector< Smart3dMap::triangle > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_triangle_Sg__RemoveAt(vector< Smart3dMap::triangle > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_triangle_Sg__RemoveRange(vector< Smart3dMap::triangle > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< Smart3dMap::triangle > *vector_Sl_Smart3dMap_triangle_Sg__Repeat(Smart3dMap::triangle const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< Smart3dMap::triangle >(count, value);
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_triangle_Sg__Reverse__SWIG_0(vector< Smart3dMap::triangle > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_triangle_Sg__Reverse__SWIG_1(vector< Smart3dMap::triangle > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void vector_Sl_Smart3dMap_triangle_Sg__SetRange(vector< Smart3dMap::triangle > *self,int index,std::vector< Smart3dMap::triangle > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+SWIGEXPORT void SWIGSTDCALL CSharp_funcA() {
+  funcA();
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_PI_get() {
+  double jresult ;
+  double result;
+  
+  result = (double)(3.14);
+  jresult = result; 
+  return jresult;
+}
+
 
 SWIGEXPORT int SWIGSTDCALL CSharp_CPlusPlusClass_Add(void * jarg1, int jarg2, int jarg3) {
   int jresult ;
@@ -337,6 +549,1162 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_CPlusPlusClass(void * jarg1) {
   
   arg1 = (CPlusPlusClass *)jarg1; 
   delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Foo_add(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+  Foo *arg1 = (Foo *) 0 ;
+  int *arg2 = (int *) 0 ;
+  int *arg3 = (int *) 0 ;
+  int *arg4 = (int *) 0 ;
+  
+  arg1 = (Foo *)jarg1; 
+  arg2 = (int *)jarg2; 
+  arg3 = (int *)jarg3; 
+  arg4 = (int *)jarg4; 
+  (arg1)->add(arg2,arg3,arg4);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Foo_spam1(void * jarg1, void * jarg2) {
+  Foo *arg1 = (Foo *) 0 ;
+  Foo *arg2 = (Foo *) 0 ;
+  
+  arg1 = (Foo *)jarg1; 
+  arg2 = (Foo *)jarg2; 
+  (arg1)->spam1(arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Foo_spam2(void * jarg1, void * jarg2) {
+  Foo *arg1 = (Foo *) 0 ;
+  Foo *arg2 = 0 ;
+  
+  arg1 = (Foo *)jarg1; 
+  arg2 = (Foo *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Foo & type is null", 0);
+    return ;
+  } 
+  (arg1)->spam2(*arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Foo_spam3(void * jarg1, void * jarg2) {
+  Foo *arg1 = (Foo *) 0 ;
+  Foo arg2 ;
+  Foo *argp2 ;
+  
+  arg1 = (Foo *)jarg1; 
+  argp2 = (Foo *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Foo", 0);
+    return ;
+  }
+  arg2 = *argp2; 
+  (arg1)->spam3(arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Foo_spam4(void * jarg1, void * jarg2) {
+  Foo *arg1 = (Foo *) 0 ;
+  Foo *arg2 ;
+  
+  arg1 = (Foo *)jarg1; 
+  arg2 = (Foo *)jarg2; 
+  (arg1)->spam4(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_Foo() {
+  void * jresult ;
+  Foo *result = 0 ;
+  
+  result = (Foo *)new Foo();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_Foo(void * jarg1) {
+  Foo *arg1 = (Foo *) 0 ;
+  
+  arg1 = (Foo *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_point3d__SWIG_0() {
+  void * jresult ;
+  Smart3dMap::point3d *result = 0 ;
+  
+  result = (Smart3dMap::point3d *)new Smart3dMap::point3d();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_point3d__SWIG_1(double jarg1, double jarg2, double jarg3) {
+  void * jresult ;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  Smart3dMap::point3d *result = 0 ;
+  
+  arg1 = (double)jarg1; 
+  arg2 = (double)jarg2; 
+  arg3 = (double)jarg3; 
+  result = (Smart3dMap::point3d *)new Smart3dMap::point3d(arg1,arg2,arg3);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_point3d_add_point(void * jarg1, void * jarg2) {
+  void * jresult ;
+  Smart3dMap::point3d *arg1 = (Smart3dMap::point3d *) 0 ;
+  Smart3dMap::point3d *arg2 = 0 ;
+  Smart3dMap::point3d result;
+  
+  arg1 = (Smart3dMap::point3d *)jarg1; 
+  arg2 = (Smart3dMap::point3d *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Smart3dMap::point3d const & type is null", 0);
+    return 0;
+  } 
+  result = (arg1)->operator +((Smart3dMap::point3d const &)*arg2);
+  jresult = new Smart3dMap::point3d((const Smart3dMap::point3d &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_point3d_x_set(void * jarg1, double jarg2) {
+  Smart3dMap::point3d *arg1 = (Smart3dMap::point3d *) 0 ;
+  double arg2 ;
+  
+  arg1 = (Smart3dMap::point3d *)jarg1; 
+  arg2 = (double)jarg2; 
+  if (arg1) (arg1)->x = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_point3d_x_get(void * jarg1) {
+  double jresult ;
+  Smart3dMap::point3d *arg1 = (Smart3dMap::point3d *) 0 ;
+  double result;
+  
+  arg1 = (Smart3dMap::point3d *)jarg1; 
+  result = (double) ((arg1)->x);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_point3d_y_set(void * jarg1, double jarg2) {
+  Smart3dMap::point3d *arg1 = (Smart3dMap::point3d *) 0 ;
+  double arg2 ;
+  
+  arg1 = (Smart3dMap::point3d *)jarg1; 
+  arg2 = (double)jarg2; 
+  if (arg1) (arg1)->y = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_point3d_y_get(void * jarg1) {
+  double jresult ;
+  Smart3dMap::point3d *arg1 = (Smart3dMap::point3d *) 0 ;
+  double result;
+  
+  arg1 = (Smart3dMap::point3d *)jarg1; 
+  result = (double) ((arg1)->y);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_point3d_z_set(void * jarg1, double jarg2) {
+  Smart3dMap::point3d *arg1 = (Smart3dMap::point3d *) 0 ;
+  double arg2 ;
+  
+  arg1 = (Smart3dMap::point3d *)jarg1; 
+  arg2 = (double)jarg2; 
+  if (arg1) (arg1)->z = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_point3d_z_get(void * jarg1) {
+  double jresult ;
+  Smart3dMap::point3d *arg1 = (Smart3dMap::point3d *) 0 ;
+  double result;
+  
+  arg1 = (Smart3dMap::point3d *)jarg1; 
+  result = (double) ((arg1)->z);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_point3d(void * jarg1) {
+  Smart3dMap::point3d *arg1 = (Smart3dMap::point3d *) 0 ;
+  
+  arg1 = (Smart3dMap::point3d *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_triangle_a_set(void * jarg1, int jarg2) {
+  Smart3dMap::triangle *arg1 = (Smart3dMap::triangle *) 0 ;
+  int arg2 ;
+  
+  arg1 = (Smart3dMap::triangle *)jarg1; 
+  arg2 = (int)jarg2; 
+  if (arg1) (arg1)->a = arg2;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_triangle_a_get(void * jarg1) {
+  int jresult ;
+  Smart3dMap::triangle *arg1 = (Smart3dMap::triangle *) 0 ;
+  int result;
+  
+  arg1 = (Smart3dMap::triangle *)jarg1; 
+  result = (int) ((arg1)->a);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_triangle_b_set(void * jarg1, int jarg2) {
+  Smart3dMap::triangle *arg1 = (Smart3dMap::triangle *) 0 ;
+  int arg2 ;
+  
+  arg1 = (Smart3dMap::triangle *)jarg1; 
+  arg2 = (int)jarg2; 
+  if (arg1) (arg1)->b = arg2;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_triangle_b_get(void * jarg1) {
+  int jresult ;
+  Smart3dMap::triangle *arg1 = (Smart3dMap::triangle *) 0 ;
+  int result;
+  
+  arg1 = (Smart3dMap::triangle *)jarg1; 
+  result = (int) ((arg1)->b);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_triangle_c_set(void * jarg1, int jarg2) {
+  Smart3dMap::triangle *arg1 = (Smart3dMap::triangle *) 0 ;
+  int arg2 ;
+  
+  arg1 = (Smart3dMap::triangle *)jarg1; 
+  arg2 = (int)jarg2; 
+  if (arg1) (arg1)->c = arg2;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_triangle_c_get(void * jarg1) {
+  int jresult ;
+  Smart3dMap::triangle *arg1 = (Smart3dMap::triangle *) 0 ;
+  int result;
+  
+  arg1 = (Smart3dMap::triangle *)jarg1; 
+  result = (int) ((arg1)->c);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_triangle() {
+  void * jresult ;
+  Smart3dMap::triangle *result = 0 ;
+  
+  result = (Smart3dMap::triangle *)new Smart3dMap::triangle();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_triangle(void * jarg1) {
+  Smart3dMap::triangle *arg1 = (Smart3dMap::triangle *) 0 ;
+  
+  arg1 = (Smart3dMap::triangle *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vec3ds_Clear(void * jarg1) {
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vec3ds_Add(void * jarg1, void * jarg2) {
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  Smart3dMap::point3d *arg2 = 0 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  arg2 = (Smart3dMap::point3d *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Smart3dMap::point3d const & type is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((Smart3dMap::point3d const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_vec3ds_size(void * jarg1) {
+  unsigned long jresult ;
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  vector< Smart3dMap::point3d >::size_type result;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  result = ((vector< Smart3dMap::point3d > const *)arg1)->size();
+  jresult = (unsigned long)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_vec3ds_capacity(void * jarg1) {
+  unsigned long jresult ;
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  vector< Smart3dMap::point3d >::size_type result;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  result = ((vector< Smart3dMap::point3d > const *)arg1)->capacity();
+  jresult = (unsigned long)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vec3ds_reserve(void * jarg1, unsigned long jarg2) {
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  vector< Smart3dMap::point3d >::size_type arg2 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  arg2 = (vector< Smart3dMap::point3d >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_vec3ds__SWIG_0() {
+  void * jresult ;
+  vector< Smart3dMap::point3d > *result = 0 ;
+  
+  result = (vector< Smart3dMap::point3d > *)new vector< Smart3dMap::point3d >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_vec3ds__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< Smart3dMap::point3d > *arg1 = 0 ;
+  vector< Smart3dMap::point3d > *result = 0 ;
+  
+  arg1 = (std::vector< Smart3dMap::point3d > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Smart3dMap::point3d > const & type is null", 0);
+    return 0;
+  } 
+  result = (vector< Smart3dMap::point3d > *)new vector< Smart3dMap::point3d >((std::vector< Smart3dMap::point3d > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_vec3ds__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  vector< Smart3dMap::point3d > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (vector< Smart3dMap::point3d > *)new_vector_Sl_Smart3dMap_point3d_Sg___SWIG_2(arg1);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_vec3ds_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  int arg2 ;
+  Smart3dMap::point3d result;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = vector_Sl_Smart3dMap_point3d_Sg__getitemcopy(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = new Smart3dMap::point3d((const Smart3dMap::point3d &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_vec3ds_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  int arg2 ;
+  Smart3dMap::point3d *result = 0 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (Smart3dMap::point3d *) &vector_Sl_Smart3dMap_point3d_Sg__getitem(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vec3ds_setitem(void * jarg1, int jarg2, void * jarg3) {
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  int arg2 ;
+  Smart3dMap::point3d *arg3 = 0 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (Smart3dMap::point3d *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Smart3dMap::point3d const & type is null", 0);
+    return ;
+  } 
+  try {
+    vector_Sl_Smart3dMap_point3d_Sg__setitem(arg1,arg2,(Smart3dMap::point3d const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vec3ds_AddRange(void * jarg1, void * jarg2) {
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  std::vector< Smart3dMap::point3d > *arg2 = 0 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  arg2 = (std::vector< Smart3dMap::point3d > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Smart3dMap::point3d > const & type is null", 0);
+    return ;
+  } 
+  vector_Sl_Smart3dMap_point3d_Sg__AddRange(arg1,(vector< Smart3dMap::point3d > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_vec3ds_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< Smart3dMap::point3d > *result = 0 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< Smart3dMap::point3d > *)vector_Sl_Smart3dMap_point3d_Sg__GetRange(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vec3ds_Insert(void * jarg1, int jarg2, void * jarg3) {
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  int arg2 ;
+  Smart3dMap::point3d *arg3 = 0 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (Smart3dMap::point3d *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Smart3dMap::point3d const & type is null", 0);
+    return ;
+  } 
+  try {
+    vector_Sl_Smart3dMap_point3d_Sg__Insert(arg1,arg2,(Smart3dMap::point3d const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vec3ds_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  int arg2 ;
+  std::vector< Smart3dMap::point3d > *arg3 = 0 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< Smart3dMap::point3d > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Smart3dMap::point3d > const & type is null", 0);
+    return ;
+  } 
+  try {
+    vector_Sl_Smart3dMap_point3d_Sg__InsertRange(arg1,arg2,(vector< Smart3dMap::point3d > const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vec3ds_RemoveAt(void * jarg1, int jarg2) {
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  int arg2 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    vector_Sl_Smart3dMap_point3d_Sg__RemoveAt(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vec3ds_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    vector_Sl_Smart3dMap_point3d_Sg__RemoveRange(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_vec3ds_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  Smart3dMap::point3d *arg1 = 0 ;
+  int arg2 ;
+  std::vector< Smart3dMap::point3d > *result = 0 ;
+  
+  arg1 = (Smart3dMap::point3d *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Smart3dMap::point3d const & type is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< Smart3dMap::point3d > *)vector_Sl_Smart3dMap_point3d_Sg__Repeat((Smart3dMap::point3d const &)*arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vec3ds_Reverse__SWIG_0(void * jarg1) {
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  vector_Sl_Smart3dMap_point3d_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vec3ds_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    vector_Sl_Smart3dMap_point3d_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vec3ds_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  int arg2 ;
+  std::vector< Smart3dMap::point3d > *arg3 = 0 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< Smart3dMap::point3d > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Smart3dMap::point3d > const & type is null", 0);
+    return ;
+  } 
+  try {
+    vector_Sl_Smart3dMap_point3d_Sg__SetRange(arg1,arg2,(vector< Smart3dMap::point3d > const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_vec3ds(void * jarg1) {
+  vector< Smart3dMap::point3d > *arg1 = (vector< Smart3dMap::point3d > *) 0 ;
+  
+  arg1 = (vector< Smart3dMap::point3d > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vecTris_Clear(void * jarg1) {
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vecTris_Add(void * jarg1, void * jarg2) {
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  Smart3dMap::triangle *arg2 = 0 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  arg2 = (Smart3dMap::triangle *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Smart3dMap::triangle const & type is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((Smart3dMap::triangle const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_vecTris_size(void * jarg1) {
+  unsigned long jresult ;
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  vector< Smart3dMap::triangle >::size_type result;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  result = ((vector< Smart3dMap::triangle > const *)arg1)->size();
+  jresult = (unsigned long)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_vecTris_capacity(void * jarg1) {
+  unsigned long jresult ;
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  vector< Smart3dMap::triangle >::size_type result;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  result = ((vector< Smart3dMap::triangle > const *)arg1)->capacity();
+  jresult = (unsigned long)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vecTris_reserve(void * jarg1, unsigned long jarg2) {
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  vector< Smart3dMap::triangle >::size_type arg2 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  arg2 = (vector< Smart3dMap::triangle >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_vecTris__SWIG_0() {
+  void * jresult ;
+  vector< Smart3dMap::triangle > *result = 0 ;
+  
+  result = (vector< Smart3dMap::triangle > *)new vector< Smart3dMap::triangle >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_vecTris__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< Smart3dMap::triangle > *arg1 = 0 ;
+  vector< Smart3dMap::triangle > *result = 0 ;
+  
+  arg1 = (std::vector< Smart3dMap::triangle > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Smart3dMap::triangle > const & type is null", 0);
+    return 0;
+  } 
+  result = (vector< Smart3dMap::triangle > *)new vector< Smart3dMap::triangle >((std::vector< Smart3dMap::triangle > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_vecTris__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  vector< Smart3dMap::triangle > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (vector< Smart3dMap::triangle > *)new_vector_Sl_Smart3dMap_triangle_Sg___SWIG_2(arg1);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_vecTris_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  int arg2 ;
+  Smart3dMap::triangle result;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = vector_Sl_Smart3dMap_triangle_Sg__getitemcopy(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = new Smart3dMap::triangle((const Smart3dMap::triangle &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_vecTris_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  int arg2 ;
+  Smart3dMap::triangle *result = 0 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (Smart3dMap::triangle *) &vector_Sl_Smart3dMap_triangle_Sg__getitem(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vecTris_setitem(void * jarg1, int jarg2, void * jarg3) {
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  int arg2 ;
+  Smart3dMap::triangle *arg3 = 0 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (Smart3dMap::triangle *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Smart3dMap::triangle const & type is null", 0);
+    return ;
+  } 
+  try {
+    vector_Sl_Smart3dMap_triangle_Sg__setitem(arg1,arg2,(Smart3dMap::triangle const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vecTris_AddRange(void * jarg1, void * jarg2) {
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  std::vector< Smart3dMap::triangle > *arg2 = 0 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  arg2 = (std::vector< Smart3dMap::triangle > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Smart3dMap::triangle > const & type is null", 0);
+    return ;
+  } 
+  vector_Sl_Smart3dMap_triangle_Sg__AddRange(arg1,(vector< Smart3dMap::triangle > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_vecTris_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< Smart3dMap::triangle > *result = 0 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< Smart3dMap::triangle > *)vector_Sl_Smart3dMap_triangle_Sg__GetRange(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vecTris_Insert(void * jarg1, int jarg2, void * jarg3) {
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  int arg2 ;
+  Smart3dMap::triangle *arg3 = 0 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (Smart3dMap::triangle *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Smart3dMap::triangle const & type is null", 0);
+    return ;
+  } 
+  try {
+    vector_Sl_Smart3dMap_triangle_Sg__Insert(arg1,arg2,(Smart3dMap::triangle const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vecTris_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  int arg2 ;
+  std::vector< Smart3dMap::triangle > *arg3 = 0 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< Smart3dMap::triangle > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Smart3dMap::triangle > const & type is null", 0);
+    return ;
+  } 
+  try {
+    vector_Sl_Smart3dMap_triangle_Sg__InsertRange(arg1,arg2,(vector< Smart3dMap::triangle > const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vecTris_RemoveAt(void * jarg1, int jarg2) {
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  int arg2 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    vector_Sl_Smart3dMap_triangle_Sg__RemoveAt(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vecTris_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    vector_Sl_Smart3dMap_triangle_Sg__RemoveRange(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_vecTris_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  Smart3dMap::triangle *arg1 = 0 ;
+  int arg2 ;
+  std::vector< Smart3dMap::triangle > *result = 0 ;
+  
+  arg1 = (Smart3dMap::triangle *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Smart3dMap::triangle const & type is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< Smart3dMap::triangle > *)vector_Sl_Smart3dMap_triangle_Sg__Repeat((Smart3dMap::triangle const &)*arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vecTris_Reverse__SWIG_0(void * jarg1) {
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  vector_Sl_Smart3dMap_triangle_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vecTris_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    vector_Sl_Smart3dMap_triangle_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_vecTris_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  int arg2 ;
+  std::vector< Smart3dMap::triangle > *arg3 = 0 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< Smart3dMap::triangle > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Smart3dMap::triangle > const & type is null", 0);
+    return ;
+  } 
+  try {
+    vector_Sl_Smart3dMap_triangle_Sg__SetRange(arg1,arg2,(vector< Smart3dMap::triangle > const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_vecTris(void * jarg1) {
+  vector< Smart3dMap::triangle > *arg1 = (vector< Smart3dMap::triangle > *) 0 ;
+  
+  arg1 = (vector< Smart3dMap::triangle > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_gmeParseObj() {
+  void * jresult ;
+  Smart3dMap::gmeParseObj *result = 0 ;
+  
+  result = (Smart3dMap::gmeParseObj *)new Smart3dMap::gmeParseObj();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_gmeParseObj(void * jarg1) {
+  Smart3dMap::gmeParseObj *arg1 = (Smart3dMap::gmeParseObj *) 0 ;
+  
+  arg1 = (Smart3dMap::gmeParseObj *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_gmeParseObj_fillPoints(void * jarg1, void * jarg2) {
+  Smart3dMap::gmeParseObj *arg1 = (Smart3dMap::gmeParseObj *) 0 ;
+  Smart3dMap::vec3dList arg2 ;
+  Smart3dMap::vec3dList *argp2 ;
+  
+  arg1 = (Smart3dMap::gmeParseObj *)jarg1; 
+  argp2 = (Smart3dMap::vec3dList *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Smart3dMap::vec3dList", 0);
+    return ;
+  }
+  arg2 = *argp2; 
+  (arg1)->fillPoints(arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_gmeParseObj_fillTriangles(void * jarg1, void * jarg2) {
+  Smart3dMap::gmeParseObj *arg1 = (Smart3dMap::gmeParseObj *) 0 ;
+  Smart3dMap::vecTriList arg2 ;
+  Smart3dMap::vecTriList *argp2 ;
+  
+  arg1 = (Smart3dMap::gmeParseObj *)jarg1; 
+  argp2 = (Smart3dMap::vecTriList *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Smart3dMap::vecTriList", 0);
+    return ;
+  }
+  arg2 = *argp2; 
+  (arg1)->fillTriangles(arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_gmeParseObj_setObjName(void * jarg1, char * jarg2) {
+  Smart3dMap::gmeParseObj *arg1 = (Smart3dMap::gmeParseObj *) 0 ;
+  std::string arg2 ;
+  
+  arg1 = (Smart3dMap::gmeParseObj *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  (&arg2)->assign(jarg2); 
+  (arg1)->setObjName(arg2);
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_gmeParseObj_getPointsNum(void * jarg1) {
+  int jresult ;
+  Smart3dMap::gmeParseObj *arg1 = (Smart3dMap::gmeParseObj *) 0 ;
+  int result;
+  
+  arg1 = (Smart3dMap::gmeParseObj *)jarg1; 
+  result = (int)(arg1)->getPointsNum();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_gmeParseObj_getTrianglesNum(void * jarg1) {
+  int jresult ;
+  Smart3dMap::gmeParseObj *arg1 = (Smart3dMap::gmeParseObj *) 0 ;
+  int result;
+  
+  arg1 = (Smart3dMap::gmeParseObj *)jarg1; 
+  result = (int)(arg1)->getTrianglesNum();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_gmeParseObj_getName(void * jarg1) {
+  char * jresult ;
+  Smart3dMap::gmeParseObj *arg1 = (Smart3dMap::gmeParseObj *) 0 ;
+  std::string result;
+  
+  arg1 = (Smart3dMap::gmeParseObj *)jarg1; 
+  result = (arg1)->getName();
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_gmeParseObj_getBatchId(void * jarg1) {
+  void * jresult ;
+  Smart3dMap::gmeParseObj *arg1 = (Smart3dMap::gmeParseObj *) 0 ;
+  std::vector< int > result;
+  
+  arg1 = (Smart3dMap::gmeParseObj *)jarg1; 
+  result = (arg1)->getBatchId();
+  jresult = new std::vector< int >((const std::vector< int > &)result); 
+  return jresult;
 }
 
 

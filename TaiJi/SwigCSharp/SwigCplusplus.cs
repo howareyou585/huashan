@@ -10,4 +10,9 @@
 
 
 public class SwigCplusplus {
+  public static void funcA() {
+    SwigCplusplusPINVOKE.funcA();
+  }
+
+  public static readonly double PI = SwigCplusplusPINVOKE.PI_get();
 }

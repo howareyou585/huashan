@@ -1,5 +1,18 @@
 %module SwigCplusplus
 %{
 	#include "CPlusPlusClass.h"
+	#include "gmeDefine.h"
+	#include "gmeParseObj.h"
+	using namespace Smart3dMap;
 %}
+%include "std_string.i"
+%include "std_vector.i"
+using namespace std;
 %include "CPlusPlusClass.h"
+%rename(add_point) Smart3dMap::point3d::operator + (const point3d&);
+%include "gmeDefine.h"
+
+%template(vec3ds) vector<Smart3dMap::point3d>;
+%template(vecTris) vector<Smart3dMap::triangle>;
+%include "gmeParseObj.h"
+
