@@ -16,6 +16,7 @@ void funcA()
 
 void Foo::add(int* a, int* b, int* result)
 {
+    *result = *a + *b;
 }
 
 void Foo::spam1(Foo* x)

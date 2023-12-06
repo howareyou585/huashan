@@ -17,3 +17,7 @@ public:
 	void spam3(Foo x);   // 传值
 	void spam4(Foo x[]); // 传数组
 };
+class Bar : public Foo
+{
+
+};

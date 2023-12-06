@@ -46,3 +46,12 @@ TaiJi/SmartPointer/SmartPointer.vcxproj.user
 /TaiJi/SwigCSharp/bin/x64/Debug
 /TaiJi/SwigCSharp/obj
 /TaiJi/SwigCplusplus/x64/Debug
+/TaiJi/Protocol/protoc
+/TaiJi/Protocol/cxx
+/TaiJi/Protocol/ts
+/TaiJi/Protocol
+/TaiJi/TemplateTypeInference/x64/Debug
+/TaiJi/CPlusPlusUseCSharpDll/x64/Debug
+/TaiJi/CShapeDll/bin/Debug
+/TaiJi/CShapeDll/obj
+/TaiJi/CSharpToCPPBridge/x64/Debug

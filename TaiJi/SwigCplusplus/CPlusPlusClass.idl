@@ -15,4 +15,8 @@ using namespace std;
 %template(vec3ds) vector<Smart3dMap::point3d>;
 %template(vecTris) vector<Smart3dMap::triangle>;
 %include "gmeParseObj.h"
+%include<typemaps.i>
+%apply int* OUTPUT{ int* result };
+%apply int* INPUT{ int* a,int b };
+
 
