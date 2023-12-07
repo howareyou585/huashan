@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPlusPlusUseCSharpDll", "CP
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CSharpToCPPBridge", "CSharpToCPPBridge\CSharpToCPPBridge.vcxproj", "{B6A6E369-2FB1-4F4F-B515-BC358EAB904C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LambdaDemo", "LambdaDemo\LambdaDemo.vcxproj", "{52D8C00F-491E-43CC-8E41-0E53A0270B1F}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Protocol\Protocol.vcxitems*{248cceaa-3377-48dc-901e-e4a5a877cabf}*SharedItemsImports = 4
@@ -131,6 +133,16 @@ Global
 		{B6A6E369-2FB1-4F4F-B515-BC358EAB904C}.Release|x64.Build.0 = Release|x64
 		{B6A6E369-2FB1-4F4F-B515-BC358EAB904C}.Release|x86.ActiveCfg = Release|Win32
 		{B6A6E369-2FB1-4F4F-B515-BC358EAB904C}.Release|x86.Build.0 = Release|Win32
+		{52D8C00F-491E-43CC-8E41-0E53A0270B1F}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{52D8C00F-491E-43CC-8E41-0E53A0270B1F}.Debug|x64.ActiveCfg = Debug|x64
+		{52D8C00F-491E-43CC-8E41-0E53A0270B1F}.Debug|x64.Build.0 = Debug|x64
+		{52D8C00F-491E-43CC-8E41-0E53A0270B1F}.Debug|x86.ActiveCfg = Debug|Win32
+		{52D8C00F-491E-43CC-8E41-0E53A0270B1F}.Debug|x86.Build.0 = Debug|Win32
+		{52D8C00F-491E-43CC-8E41-0E53A0270B1F}.Release|Any CPU.ActiveCfg = Release|Win32
+		{52D8C00F-491E-43CC-8E41-0E53A0270B1F}.Release|x64.ActiveCfg = Release|x64
+		{52D8C00F-491E-43CC-8E41-0E53A0270B1F}.Release|x64.Build.0 = Release|x64
+		{52D8C00F-491E-43CC-8E41-0E53A0270B1F}.Release|x86.ActiveCfg = Release|Win32
+		{52D8C00F-491E-43CC-8E41-0E53A0270B1F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
