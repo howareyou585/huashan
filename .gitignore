@@ -56,3 +56,6 @@ TaiJi/SmartPointer/SmartPointer.vcxproj.user
 /TaiJi/CShapeDll/obj
 /TaiJi/CSharpToCPPBridge/x64/Debug
 /TaiJi/LambdaDemo/x64/Debug
+*.db
+*.db-shm
+*.db-wal

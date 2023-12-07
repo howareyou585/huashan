@@ -3,13 +3,14 @@
 
 #include <iostream>
 #include <boost/type_index.hpp>
-using namespace boost::typeindex;
+
+using boost::typeindex::type_id_with_cvr;
 using namespace std;
 template<typename T>
 void funcPassVal(T paramVal)
 {
-    std::cout << "T = " << type_id<T>().pretty_name() << std::endl;
-    std::cout << "paramval type = " << type_id <decltype(paramVal)>().pretty_name() << std::endl;
+    std::cout << "T = " << type_id_with_cvr<T>().pretty_name() << std::endl;
+    std::cout << "paramval type = " << type_id_with_cvr <decltype(paramVal)>().pretty_name() << std::endl;
     paramVal += 10;
     std::cout << "paramVal=" << paramVal << endl;
 }
@@ -17,23 +18,23 @@ void funcPassVal(T paramVal)
 template<typename T>
 void funcPassConstVal(const T paramVal)
 {
-    std::cout << "T = " << type_id<T>().pretty_name() << std::endl;
-    std::cout << "paramval type = " << type_id <decltype(paramVal)>().pretty_name() << std::endl;
+    std::cout << "T = " << type_id_with_cvr<T>().pretty_name() << std::endl;
+    std::cout << "paramval type = " << type_id_with_cvr <decltype(paramVal)>().pretty_name() << std::endl;
 }
 
 template<typename T>
 void funcPassRef(T& paramval)
 {
    
-    std::cout << "T = " << type_id<T>().pretty_name() << std::endl;
-    std::cout << "paramval type = " << type_id <decltype(paramval)>().pretty_name() << std::endl;
+    std::cout << "T = " << type_id_with_cvr<T>().pretty_name() << std::endl;
+    std::cout << "paramval type = " << type_id_with_cvr <decltype(paramval)>().pretty_name() << std::endl;
 }
 template<typename T>
 void funcPassConstRef(const T& paramval)
 {
    
-    std::cout << "T = " << type_id<T>().pretty_name() << std::endl;
-    std::cout << "paramval type = " << type_id <decltype(paramval)>().pretty_name() << std::endl;
+    std::cout << "T = " << type_id_with_cvr<T>().pretty_name() << std::endl;
+    std::cout << "paramval type = " << type_id_with_cvr <decltype(paramval)>().pretty_name() << std::endl;
 }
 int main()
 {
