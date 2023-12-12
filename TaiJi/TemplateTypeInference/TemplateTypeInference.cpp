@@ -11,8 +11,6 @@ void funcPassVal(T paramVal)
 {
     std::cout << "T = " << type_id_with_cvr<T>().pretty_name() << std::endl;
     std::cout << "paramval type = " << type_id_with_cvr <decltype(paramVal)>().pretty_name() << std::endl;
-    paramVal += 10;
-    std::cout << "paramVal=" << paramVal << endl;
 }
 
 template<typename T>
@@ -36,40 +34,88 @@ void funcPassConstRef(const T& paramval)
     std::cout << "T = " << type_id_with_cvr<T>().pretty_name() << std::endl;
     std::cout << "paramval type = " << type_id_with_cvr <decltype(paramval)>().pretty_name() << std::endl;
 }
+//万能引用
+template<typename T>
+void funcPassUniversalRef(T&& paramval)
+{
+	std::cout << "T=" << type_id_with_cvr<T>().pretty_name() << std::endl;
+	std::cout << "paramval type = " << type_id_with_cvr <decltype(paramval)>().pretty_name()<<std::endl;
+	std::cout << endl;
+}
+//右值引用
+template <typename T>
+void funcPassByLightRef(vector<T>&& vecData)
+{
+	
+}
+
+void funcPassByIntLightRef(int&& intRightRef)
+{
+
+}
+
+template<typename T>
+void funcPassPointer(T* paramval)
+{
+	std::cout << "T=" << type_id_with_cvr<T>().pretty_name() << std::endl;
+	std::cout << "paramval type = " << type_id_with_cvr <decltype(paramval)>().pretty_name() << std::endl;
+	std::cout << endl;
+}
 int main()
 {
     //std::cout << "Hello World!\n";
     int a = 10;
-    int& b = a;
-    const int& c = a;
-    const int d = 10;
-    cout << "invoke funcPassVal" << endl;
-    //const 值
-    funcPassVal(a);  //T int <====> paramVal int
-    cout << a << endl;
-    funcPassVal(b);  //T int <====> paramVal int   引用会被忽略 
-    cout << b << endl; 
-    funcPassVal(c);  //T int <====> paramVal int   引用会被忽略  const 也会被忽略
-    cout << c << endl;
-    funcPassVal(d);  //T int <====> paramVal int   const 会被忽略
-    cout << d << endl;
-    cout << endl;
-    
-    
-    //引用
-    cout << "invoke funcPassConstVal" << endl;
-    funcPassConstVal(a);  //T int <====> paramVal int
-    funcPassConstVal(b);  //T int <====> paramVal int   引用会被忽略 
-    funcPassConstVal(c);  //T int <====> paramVal int   引用会被忽略  const 也会被忽略
-    funcPassConstVal(d);  //T int <====> paramVal int   const 会被忽略
+    int& refA = a;
+    const int& refConstA = a;
+    const int cd = 10;
 
-    cout << endl;
-    cout << "invoke funcPassRef" << endl;
+	/*cout << "invoke funcPassPointer" << endl;
+	funcPassPointer(&a);
+	const int*pa = &a;
+	funcPassPointer(pa);*/
 
-    funcPassRef(a);  //T int <====> paramVal int
-    funcPassRef(b);  //T int <====> paramVal int   引用会被忽略 
-    funcPassRef(c);  //T int <====> paramVal int   引用会被忽略  const 也会被忽略
-    funcPassRef(d);  //T int <====> paramVal int   const 会被忽略
+ //   cout << "invoke funcPassVal：non pointor" << endl; //值传递非指针
+ //   //值传递 ：引用 const 全被忽略
+	//funcPassVal(a);  //T int <====> paramVal int
+	//funcPassVal(refA);  //T int <====> paramVal int   引用会被忽略 
+	//funcPassVal(refConstA);  //T int <====> paramVal int   引用会被忽略  const 也会被忽略
+	//funcPassVal(cd);  //T int <====> paramVal int   const 会被忽略
+ //  
+	//cout<< "invoke funcPassVal： pointor" << endl; //值传递指针
+	//char mystr[] = "I love china";
+	//
+	//const char * ptrstr = mystr;
+	//funcPassRef(mystr);
+	//funcPassRef(ptrstr);
+	
+	funcPassRef(a);// 
+	funcPassRef(refA); //引用被忽略掉
+	funcPassRef(refConstA); //引用被忽略掉， 添加const 
+	funcPassRef(cd);//添加const
+
+    //
+    //
+    ////引用
+    //cout << "invoke funcPassConstVal" << endl;
+    //funcPassConstVal(a);  //T int <====> paramVal int
+    //funcPassConstVal(b);  //T int <====> paramVal int   引用会被忽略 
+    //funcPassConstVal(c);  //T int <====> paramVal int   引用会被忽略  const 也会被忽略
+    //funcPassConstVal(d);  //T int <====> paramVal int   const 会被忽略
+
+    //cout << endl;
+    //cout << "invoke funcPassRef" << endl;
+
+    //funcPassRef(a);  //T int <====> paramVal int
+    //funcPassRef(refA);  //T int <====> paramVal int   引用会被忽略 
+    //funcPassRef(refConstA);  //T int <====> paramVal int   引用会被忽略  const 也会被忽略
+    //funcPassRef(cd);  //T int <====> paramVal int   const 会被忽略
+
+	//cout << "invoke funcPassConstRef" << endl;
+	//funcPassConstRef(a);
+	//funcPassConstRef(refA); //引用被忽略掉
+	//funcPassConstRef(refConstA);// 引用被忽略掉,const属性被忽略掉
+	//funcPassConstRef(cd);//const属性被忽略掉
+	
 
     /*std::cout << "invoke func" << std::endl;
     func(a);
@@ -80,6 +126,26 @@ int main()
     funcConst(10);
     funcConst(a);
     funcConst(b);*/
+
+	////万能引用
+	//cout << "invoke funcPassUniversalRef" << endl;
+	//funcPassUniversalRef(a);
+	//funcPassUniversalRef(refA);
+	//funcPassUniversalRef(refConstA);
+	//funcPassUniversalRef(cd);
+	//funcPassUniversalRef(100);
+	//int && refRightValue = 100;
+	//funcPassUniversalRef(refRightValue);  //传递的是一个右值引用变量是一个左值。
+	//
+	////右值引用
+	//cout << "invoke funcPassByLightRef" << endl;
+	//vector<int>vecData{1,2};
+
+	//funcPassByLightRef(std::move(vecData));
+
+	//int&& right_ref_a = 5;
+	//right_ref_a = a;
+	//funcPassByIntLightRef(right_ref_a); //必须是右值，右值引用是左值
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单

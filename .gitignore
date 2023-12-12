@@ -59,3 +59,13 @@ TaiJi/SmartPointer/SmartPointer.vcxproj.user
 *.db
 *.db-shm
 *.db-wal
+*.ipch
+*.lock
+*.ide
+*.ide-shm
+*.ide-wal
+*.tlog
+*.log
+*.obj
+*.pch
+*.idb

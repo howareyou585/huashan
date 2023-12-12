@@ -40,7 +40,10 @@ T ff(T&& x)
 {
 	return x;
 }
+void myFunc(int&& val)
+{
 
+}
 int main()
 {
 	//示例代码1：
@@ -50,12 +53,20 @@ int main()
 	CData* p1 = Creator(str1);
 	CData* p2 = Creator(str1 + str2);*/
 	//示例代码2：
-	std::cout << "示例代码2：" << std::endl;
+	/*std::cout << "示例代码2：" << std::endl;
 	int i = 1;
 	int& j = i;
 	int&& k = std::move(i);
 	int p[10];
-	std::cout << ff(i);
+	std::cout << ff(i);*/
+
+	int i = 100;
+	myFunc(std::move(i)); // 需要把左值转化为右值
+	myFunc(100);
+	int &j = i;
+	int&& r = 100;
+	//myFunc(r);//r虽是右值引用，但实际上他是一个左值。
+	//r = j;
     return 0;
 }
 

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33927.289
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DumpDemo", "DumpDemo\DumpDemo.vcxproj", "{7742E611-B4A1-47C6-8DAA-298F8C8AE58A}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CSharpToCPPBridge", "CSharpToCPPBridge\CSharpToCPPBridge.vcxproj", "{B6A6E369-2FB1-4F4F-B515-BC358EAB904C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LambdaDemo", "LambdaDemo\LambdaDemo.vcxproj", "{52D8C00F-491E-43CC-8E41-0E53A0270B1F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ForwaredDemo", "ForwaredDemo\ForwaredDemo.vcxproj", "{826B5C89-C843-4950-A242-14E3ED9CF650}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -143,6 +145,16 @@ Global
 		{52D8C00F-491E-43CC-8E41-0E53A0270B1F}.Release|x64.Build.0 = Release|x64
 		{52D8C00F-491E-43CC-8E41-0E53A0270B1F}.Release|x86.ActiveCfg = Release|Win32
 		{52D8C00F-491E-43CC-8E41-0E53A0270B1F}.Release|x86.Build.0 = Release|Win32
+		{826B5C89-C843-4950-A242-14E3ED9CF650}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{826B5C89-C843-4950-A242-14E3ED9CF650}.Debug|x64.ActiveCfg = Debug|x64
+		{826B5C89-C843-4950-A242-14E3ED9CF650}.Debug|x64.Build.0 = Debug|x64
+		{826B5C89-C843-4950-A242-14E3ED9CF650}.Debug|x86.ActiveCfg = Debug|Win32
+		{826B5C89-C843-4950-A242-14E3ED9CF650}.Debug|x86.Build.0 = Debug|Win32
+		{826B5C89-C843-4950-A242-14E3ED9CF650}.Release|Any CPU.ActiveCfg = Release|Win32
+		{826B5C89-C843-4950-A242-14E3ED9CF650}.Release|x64.ActiveCfg = Release|x64
+		{826B5C89-C843-4950-A242-14E3ED9CF650}.Release|x64.Build.0 = Release|x64
+		{826B5C89-C843-4950-A242-14E3ED9CF650}.Release|x86.ActiveCfg = Release|Win32
+		{826B5C89-C843-4950-A242-14E3ED9CF650}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
