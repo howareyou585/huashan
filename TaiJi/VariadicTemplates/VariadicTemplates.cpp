@@ -3,6 +3,7 @@
 
 #include <iostream>
 using namespace std;
+//递归可变参的定义
 template<typename T>
 void myPrint(T t1)
 {
@@ -16,19 +17,25 @@ void myPrint(T1 t1, T2 ... t2)
     cout << sizeof...(t2) << endl;
     myPrint(t2...);
 }
-
-template<typename T, typename... TS>
-void myPrint2(T t, TS... ts)
+template <typename ...T>
+void myPrint(T... args)
 {
-    cout << t << ",";
-    if (sizeof...(ts) > 0)
-    {
-        myPrint2(ts...);
-    }
+    cout << "myPrint(....)" << endl;
 }
+//template<typename T, typename... TS>
+//void myPrint2(T t, TS... ts)
+//{
+//    cout << t << ",";
+//    if (sizeof...(ts) > 0)
+//    {
+//        myPrint2(ts...);
+//    }
+//}
 int main()
 {
-    myPrint2(100, 20, "kkkk");
+    //执行了  void myPrint(T1 t1, T2 ... t2) 
+    //没有执行void myPrint(T... args)
+    myPrint(100, 20, "kkkk"); //当较泛化和较特化的模板函数同时存在的时候，最终程序会执行较特化的那一个
     std::cout << "Hello World!\n";
 }
 
