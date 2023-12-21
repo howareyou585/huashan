@@ -9,20 +9,20 @@
 //------------------------------------------------------------------------------
 
 
-public class Foo : global::System.IDisposable {
+public class Caller : global::System.IDisposable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
   protected bool swigCMemOwn;
 
-  internal Foo(global::System.IntPtr cPtr, bool cMemoryOwn) {
+  internal Caller(global::System.IntPtr cPtr, bool cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(Foo obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(Caller obj) {
     return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
   }
 
-  ~Foo() {
+  ~Caller() {
     Dispose();
   }
 
@@ -31,7 +31,7 @@ public class Foo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          SwigCplusplusPINVOKE.delete_Foo(swigCPtr);
+          SwigCplusplusPINVOKE.delete_Caller(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -39,29 +39,25 @@ public class Foo : global::System.IDisposable {
     }
   }
 
-  public void add(SWIGTYPE_p_int a, SWIGTYPE_p_int b, SWIGTYPE_p_int result) {
-    SwigCplusplusPINVOKE.Foo_add(swigCPtr, SWIGTYPE_p_int.getCPtr(a), SWIGTYPE_p_int.getCPtr(b), SWIGTYPE_p_int.getCPtr(result));
+  public Caller() : this(SwigCplusplusPINVOKE.new_Caller(), true) {
   }
 
-  public void spam1(Foo x) {
-    SwigCplusplusPINVOKE.Foo_spam1(swigCPtr, Foo.getCPtr(x));
+  public void setCallback(SimpleCallback ptrCallback) {
+    SwigCplusplusPINVOKE.Caller_setCallback(swigCPtr, SimpleCallback.getCPtr(ptrCallback));
   }
 
-  public void spam2(Foo x) {
-    SwigCplusplusPINVOKE.Foo_spam2(swigCPtr, Foo.getCPtr(x));
-    if (SwigCplusplusPINVOKE.SWIGPendingException.Pending) throw SwigCplusplusPINVOKE.SWIGPendingException.Retrieve();
+  public void resetCallback() {
+    SwigCplusplusPINVOKE.Caller_resetCallback(swigCPtr);
   }
 
-  public void spam3(Foo x) {
-    SwigCplusplusPINVOKE.Foo_spam3(swigCPtr, Foo.getCPtr(x));
-    if (SwigCplusplusPINVOKE.SWIGPendingException.Pending) throw SwigCplusplusPINVOKE.SWIGPendingException.Retrieve();
+  public SimpleCallback getCallBack() {
+    global::System.IntPtr cPtr = SwigCplusplusPINVOKE.Caller_getCallBack(swigCPtr);
+    SimpleCallback ret = (cPtr == global::System.IntPtr.Zero) ? null : new SimpleCallback(cPtr, false);
+    return ret;
   }
 
-  public void spam4(Foo x) {
-    SwigCplusplusPINVOKE.Foo_spam4(swigCPtr, Foo.getCPtr(x));
-  }
-
-  public Foo() : this(SwigCplusplusPINVOKE.new_Foo(), true) {
+  public void call() {
+    SwigCplusplusPINVOKE.Caller_call(swigCPtr);
   }
 
 }

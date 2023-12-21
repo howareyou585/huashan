@@ -3,35 +3,52 @@
 #include <iostream>
 
 using namespace std;
-int a = 0;
-int CPlusPlusClass::Add(int a, int b)
+
+
+SimpleCallback::SimpleCallback()
 {
-    return a + b;
+	std::cout << "invoke SimpleCallback::SimpleCallback()" << endl;
 }
 
-void funcA()
+SimpleCallback::~SimpleCallback()
 {
-    cout << "invoke funcA" << endl;
+	std::cout << "SimpleCallback::~SimpleCallback()" << endl;
 }
 
-void Foo::add(int* a, int* b, int* result)
+void SimpleCallback::run()
 {
-    *result = *a + *b;
+	std::cout << "SimpleCallback::run()" << endl;
 }
 
-void Foo::spam1(Foo* x)
+Caller::Caller():m_ptrCallback(0)
 {
-    
+
 }
 
-void Foo::spam2(Foo& x)
+Caller::~Caller()
 {
+
 }
 
-void Foo::spam3(Foo x)
+void Caller::setCallback(SimpleCallback* ptrCallback)
 {
+	m_ptrCallback = ptrCallback;
 }
 
-void Foo::spam4(Foo x[])
+void Caller::resetCallback()
 {
+	m_ptrCallback = nullptr;
+}
+
+SimpleCallback* Caller::getCallBack()
+{
+	return m_ptrCallback;
+}
+
+void Caller::call()
+{
+	if (m_ptrCallback)
+	{
+		m_ptrCallback->run();
+	}
 }

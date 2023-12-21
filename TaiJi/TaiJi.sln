@@ -29,6 +29,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DoWhileStyleDemo", "DoWhile
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VariadicTemplates", "VariadicTemplates\VariadicTemplates.vcxproj", "{AB635B31-55B3-49ED-AF47-2516111B9762}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MulitThreadDemo", "MulitThreadDemo\MulitThreadDemo.vcxproj", "{8D1B4F6E-3846-4D37-A55A-2471F8225643}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Protocol\Protocol.vcxitems*{248cceaa-3377-48dc-901e-e4a5a877cabf}*SharedItemsImports = 4
@@ -167,6 +169,16 @@ Global
 		{AB635B31-55B3-49ED-AF47-2516111B9762}.Release|x64.Build.0 = Release|x64
 		{AB635B31-55B3-49ED-AF47-2516111B9762}.Release|x86.ActiveCfg = Release|Win32
 		{AB635B31-55B3-49ED-AF47-2516111B9762}.Release|x86.Build.0 = Release|Win32
+		{8D1B4F6E-3846-4D37-A55A-2471F8225643}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{8D1B4F6E-3846-4D37-A55A-2471F8225643}.Debug|x64.ActiveCfg = Debug|x64
+		{8D1B4F6E-3846-4D37-A55A-2471F8225643}.Debug|x64.Build.0 = Debug|x64
+		{8D1B4F6E-3846-4D37-A55A-2471F8225643}.Debug|x86.ActiveCfg = Debug|Win32
+		{8D1B4F6E-3846-4D37-A55A-2471F8225643}.Debug|x86.Build.0 = Debug|Win32
+		{8D1B4F6E-3846-4D37-A55A-2471F8225643}.Release|Any CPU.ActiveCfg = Release|Win32
+		{8D1B4F6E-3846-4D37-A55A-2471F8225643}.Release|x64.ActiveCfg = Release|x64
+		{8D1B4F6E-3846-4D37-A55A-2471F8225643}.Release|x64.Build.0 = Release|x64
+		{8D1B4F6E-3846-4D37-A55A-2471F8225643}.Release|x86.ActiveCfg = Release|Win32
+		{8D1B4F6E-3846-4D37-A55A-2471F8225643}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

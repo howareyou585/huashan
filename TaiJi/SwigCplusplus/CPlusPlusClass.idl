@@ -1,22 +1,10 @@
-%module SwigCplusplus
+%module(directors = "1") SwigCplusplus
 %{
 	#include "CPlusPlusClass.h"
-	#include "gmeDefine.h"
-	#include "gmeParseObj.h"
-	using namespace Smart3dMap;
 %}
+%feature("director") SimpleCallback;
+
 %include "std_string.i"
 %include "std_vector.i"
 using namespace std;
 %include "CPlusPlusClass.h"
-%rename(add_point) Smart3dMap::point3d::operator + (const point3d&);
-%include "gmeDefine.h"
-
-%template(vec3ds) vector<Smart3dMap::point3d>;
-%template(vecTris) vector<Smart3dMap::triangle>;
-%include "gmeParseObj.h"
-%include<typemaps.i>
-%apply int* OUTPUT{ int* result };
-%apply int* INPUT{ int* a,int b };
-
-

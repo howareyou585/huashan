@@ -20,13 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CPlusPlusClass.h" />
-    <ClInclude Include="gmeDefine.h" />
-    <ClInclude Include="gmeParseObj.h" />
+    <ClInclude Include="CPlusPlusClass_wrap.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPlusPlusClass.cpp" />
     <ClCompile Include="CPlusPlusClass_wrap.cxx" />
-    <ClCompile Include="gmeParseObj.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="CPlusPlusClass.idl" />

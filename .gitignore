@@ -59,3 +59,8 @@ TaiJi/SmartPointer/SmartPointer.vcxproj.user
 *.db
 *.db-shm
 *.db-wal
+/TaiJi/DoWhileStyleDemo/x64/Debug
+/TaiJi/VariadicTemplates/x64/Debug/Variadic.ab635b31.tlog
+/TaiJi/VariadicTemplates/x64/Debug
+/TaiJi/MulitThreadDemo/x64/Debug/MulitThreadDemo.tlog
+/TaiJi/MulitThreadDemo/x64/Debug

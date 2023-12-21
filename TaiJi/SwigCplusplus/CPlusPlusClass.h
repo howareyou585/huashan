@@ -1,23 +1,22 @@
 #pragma once
 
-void funcA();
-#define PI 3.14;
-class CPlusPlusClass
+class SimpleCallback
 {
 public:
-    // 测试对C++模块中定义的Class的调用  
-    int Add(int a, int b);
+	SimpleCallback();
+	virtual  ~SimpleCallback();
+	virtual void run();
 };
-class Foo
+class Caller
 {
+private:
+	SimpleCallback* m_ptrCallback;
 public:
-	void add(int* a, int* b, int* result);
-	void spam1(Foo* x);  // 传指针
-	void spam2(Foo& x);  // 传引用
-	void spam3(Foo x);   // 传值
-	void spam4(Foo x[]); // 传数组
-};
-class Bar : public Foo
-{
+	Caller();
+	virtual ~Caller();
+	void setCallback(SimpleCallback* ptrCallback);
+	void resetCallback();
+	SimpleCallback* getCallBack();
+	void call();
 
 };
