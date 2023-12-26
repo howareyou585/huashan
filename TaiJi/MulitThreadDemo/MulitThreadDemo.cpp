@@ -7,7 +7,9 @@
 using namespace std;
 int main()
 {
-    vector<thread> vecThread;
+    //1.测试当一个线程崩溃了，其他的线程是否会继续执行
+    
+   /* vector<thread> vecThread;
     for (int i = 0; i< 100; i++)
     {
         vecThread.emplace_back(thread(print,i));
@@ -17,7 +19,19 @@ int main()
     for (int i = 0; i < vecThread.size(); i++)
     {
         vecThread[i].join();
-    }
+    }*/
+    //2.测试两个线程读写同一个变量不冲突
+    MsgQueque msgQueue;
+    //thread inputThread(&MsgQueque::inputMsg, &msgQueue);
+    //thread outputThread(&MsgQueque::outputMsg, &msgQueue);
+    //3.测试两个线程死锁的场景
+   /* thread inputThread(&MsgQueque::deadlockInputMsg, &msgQueue);
+    thread outputThread(&MsgQueque::deadlockOutputMsg, &msgQueue);*/
+
+    thread inputThread(&MsgQueque::uniqueLockInputMsg, &msgQueue);
+    thread outputThread(&MsgQueque::uniqueLockOutputMsg, &msgQueue);
+    inputThread.join();
+    outputThread.join();
     std::cout << "Hello World!\n";
 }
 
