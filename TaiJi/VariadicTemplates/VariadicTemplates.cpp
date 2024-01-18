@@ -3,40 +3,39 @@
 
 #include <iostream>
 using namespace std;
-//递归可变参的定义
-template<typename T>
-void myPrint(T t1)
+
+//1.第一种方式 ：使用无参递归终止函数
+void myPrint()
 {
-    cout << t1 << endl;
+    cout << endl;
 }
-template<typename T1, typename... T2>
-void myPrint(T1 t1, T2 ... t2)
+template < typename T1, typename ...T2>
+void myPrint(T1 t1, T2... t2)
 {
-    
-    //cout << t1 << ",";
-    cout << sizeof...(t2) << endl;
+    cout << t1<<",";
     myPrint(t2...);
 }
-template <typename ...T>
-void myPrint(T... args)
+//2.第二种方式：两个函数模板，区别是模板参数的区别：当两个参数模板都适用某种情况时，
+//优先使用没有“template parameter pack”的版本
+template <typename T>
+void myFunc(T t)
 {
-    cout << "myPrint(....)" << endl;
+    cout << t << endl;
 }
-//template<typename T, typename... TS>
-//void myPrint2(T t, TS... ts)
-//{
-//    cout << t << ",";
-//    if (sizeof...(ts) > 0)
-//    {
-//        myPrint2(ts...);
-//    }
-//}
+
+template <typename T1 ,typename ...T2>
+void myFunc(T1 t1, T2 ... t2)
+{
+    cout << t1 << ",";
+    myFunc(t2...);
+}
+
 int main()
 {
-    //执行了  void myPrint(T1 t1, T2 ... t2) 
-    //没有执行void myPrint(T... args)
-    myPrint(100, 20, "kkkk"); //当较泛化和较特化的模板函数同时存在的时候，最终程序会执行较特化的那一个
-    std::cout << "Hello World!\n";
+    //1.使用第一种方式：无参终止函数
+    myPrint(2, 4, 5, 6);
+    myFunc(6, 5, 4, 2);
+    return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
