@@ -71,3 +71,6 @@ TaiJi/SmartPointer/SmartPointer.vcxproj.user
 /TaiJi/packages/DllExport.1.7.4
 /TaiJi/TypedefDemo/x64/Debug
 /TaiJi/ProtobufDemo/x64/Debug
+/TaiJi/ManagedBridgeCsharp/obj/x64/Debug
+/TaiJi/ManagedBridgeCsharp/obj/Debug
+/TaiJi/ManagedBridgeCsharp/bin
