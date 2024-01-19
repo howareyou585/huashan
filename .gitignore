@@ -64,3 +64,10 @@ TaiJi/SmartPointer/SmartPointer.vcxproj.user
 /TaiJi/VariadicTemplates/x64/Debug
 /TaiJi/MulitThreadDemo/x64/Debug/MulitThreadDemo.tlog
 /TaiJi/MulitThreadDemo/x64/Debug
+/TaiJi/LoadCSharpDll/x64/Debug
+/TaiJi/ManagedBoot/bin/Debug
+/TaiJi/ManagedBoot/obj
+/TaiJi/ManagedBridge/x64/Debug
+/TaiJi/packages/DllExport.1.7.4
+/TaiJi/TypedefDemo/x64/Debug
+/TaiJi/ProtobufDemo/x64/Debug
