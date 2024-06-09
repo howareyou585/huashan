@@ -88,3 +88,5 @@ TaiJi/SmartPointer/SmartPointer.vcxproj.user
 /TaiJi/ManagedBridgeCsharp/bin
 /TaiJi/SegmentationFault/Debug
 >>>>>>> 908f6645b782ee2448f64f9771c34b9f70c80a70
+/TaiJi/SignalSlotMechanism/Debug
+/TaiJi/SignalSlotMechanism/x64/Debug
