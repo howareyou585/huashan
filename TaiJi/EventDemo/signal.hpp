@@ -4,11 +4,11 @@
 using namespace std;
 namespace Event
 {
-	template<typename ...TParam>
+	template<typename TParam>
 	class Signal
 	{
 	public:
-		Signal& operator+= (SlotBase<TParam...>*ptrSlot)
+		Signal& operator+= (SlotBase<TParam>*ptrSlot)
 		{
 			if (ptrSlot)
 			{
@@ -16,7 +16,7 @@ namespace Event
 			}
 			return *this;
 		}
-		Signal& operator-=(SlotBase<TParam...>*ptrSlot)
+		Signal& operator-=(SlotBase<TParam>*ptrSlot)
 		{
 			if (ptrSlot)
 			{
@@ -28,7 +28,7 @@ namespace Event
 			}
 			return *this;
 		}
-		void operator()(TParam... parameters)
+		void operator()(TParam parameters)
 		{
 			for (auto it = m_lstSlot.begin(); it != m_lstSlot.end(); it++)
 			{
@@ -38,12 +38,12 @@ namespace Event
 					continue;
 				}
 				
-				ptrSlot(parameters...);
+				(*ptrSlot)(parameters);
 				
 			}
 		}
 	private:
-		list<SlotBase<TParam...>*>m_lstSlot;
+		list<SlotBase<TParam>*>m_lstSlot;
 	};
 }
 
