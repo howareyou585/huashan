@@ -30,6 +30,7 @@ public:
 		{
 			return;
 		}
+
 		connect([=](args... paramters) {
 			(ptrInst->*memeberFuncPtr)(paramters...);
 			});

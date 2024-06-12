@@ -21,7 +21,7 @@ int main()
     A a;
     Event<int,int> e;
     e.connect(func);
-   // e.connect_member(&a, &A::funcA);
+    e.connect_member(&a, &A::funcA);
     e.emit(2,6);
     e.disconnect();
     std::cout << "Hello World!\n";
