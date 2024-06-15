@@ -5,25 +5,51 @@
 #include "Event.hpp"
 class A {
 public :
-    void funcA(int a , int b)
+    void addA(int a , int b)
     {
         int sum = a + b;
-        cout << "invoke A::funcA  resut = " << sum << endl;
+        cout << "invoke A::addA  a+b = " << sum << endl;
+    }
+    void subA(int a, int b)
+    {
+        int sub = a - b;
+        cout << "invoke A::subA  a-b = " << sub << endl;
     }
 };
-void func(int a, int b)
+void add(int a, int b)
 {
     int sum = a + b;
-    cout << "invoke func  resut = " << sum << endl;
+    cout << "invoke add  a+b= " << sum << endl;
+}
+void sub(int a, int b)
+{
+    int ret = a - b;
+    cout << "inkoke sub a-b = " << ret << endl;
 }
 int main()
 {
+    //A* ptra = new A();
     A a;
     Event<int,int> e;
-    e.connect(func);
-    e.connect_member(&a, &A::funcA);
+    vector<unsigned long> vecSignalId;
+    vecSignalId.emplace_back(e.connect(add));
+    vecSignalId.emplace_back(e.connect_member(&a, &A::addA));
+    e.connect(sub);
+    e.connect_member(&a, &A::subA);
     e.emit(2,6);
-    e.disconnect();
+    //vecSignalId.erase(vecSignalId.begin());
+   
+    cout << endl;
+    e.emit_for_all_but_some(2, 6, vecSignalId);
+    cout << endl;
+    e.emit_for(2, 6, vecSignalId);
+    
+    //e.disconnect();
+   /* if (ptra)
+    {
+        delete ptra;
+        ptra = nullptr;
+    }*/
     std::cout << "Hello World!\n";
 }
 
