@@ -160,6 +160,7 @@
     <ClInclude Include="A.h" />
     <ClInclude Include="Allocator.hpp" />
     <ClInclude Include="ArrayAllocator.hpp" />
+    <ClInclude Include="HeapAlloctor.h" />
     <ClInclude Include="MallocAllocator.h" />
     <ClInclude Include="ObjectPool.hpp" />
     <ClInclude Include="testMallocAllocator.h" />

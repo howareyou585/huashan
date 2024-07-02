@@ -5,8 +5,21 @@
 using namespace TaiJi;
 int main()
 {
-	A * ptrAObj = new A();
-	delete ptrAObj;
+	A *ptrArray[max_size] = { nullptr };
+	for (int i = 0; i < max_size; i++)
+	{
+		A * ptrAObj = new A();
+		//ptrArray[i] = ptrAObj;
+		delete ptrAObj;
+	}
+	for (int i = 0; i < max_size; i++)
+	{
+		//ptrAObj;
+		A *  ptrAObj = ptrArray[i];
+		//A * ptrAObj = new A();
+		delete ptrAObj;
+	}
+	
 	
     std::cout << "Hello World!\n"; 
 }

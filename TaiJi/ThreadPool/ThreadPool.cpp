@@ -49,6 +49,7 @@ namespace ThreadPool
 	{
 		//将停止状态设置为ture
 		m_stop.store(true);
+		unique_lock<mutex> ulock(m_mutex);
 		//唤醒所有挂起的线程
 		m_cv.notify_all();
 		for (auto & td: m_pool)

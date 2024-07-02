@@ -1,6 +1,8 @@
 #pragma once
 #include "Allocator.hpp"
 #include <stdexcept>
+#include <iostream>
+using namespace std;
 namespace TaiJi
 {
 	template<typename T, int N>
@@ -12,6 +14,7 @@ namespace TaiJi
 	public:
 		virtual T * allocate()
 		{
+			cout << "invoke ArrayAllocator::allocate()" << endl;
 			for (int i = 0; i < N; i++)
 			{
 				if (!m_aryUsed[i])
@@ -32,6 +35,7 @@ namespace TaiJi
 					break;
 				}
 			}*/
+			cout << "invoke ArrayAllocator::deallocate()" << endl;
 			int i = ((reinterpret_cast<char*>(p)) - m_aryData) / sizeof(T);
 			m_aryUsed[i] = false;
 		}

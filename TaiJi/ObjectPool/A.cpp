@@ -3,7 +3,8 @@
 using namespace std;
 namespace TaiJi
 {
-	ObjectPool<A, ArrayAllocator<A, 10>> A::m_pool;
+	//ObjectPool<A, ArrayAllocator<A, 10>> A::m_pool;
+	ObjectPool<A, HeapAlloctor<A, 10>> A::m_pool;
 	A::A()
 	{
 		cout << "A::A()" << endl;
@@ -22,7 +23,7 @@ namespace TaiJi
 		void *ptrRet = m_pool.allocate(size);
 		return ptrRet;
 	}
-
+	//void A::operator delete(void * ptrHeader)
 	void A::operator delete(void * p)
 	{
 		cout << "A delete from object pool." << endl;
