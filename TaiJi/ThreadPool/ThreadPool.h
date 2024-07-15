@@ -17,12 +17,18 @@ namespace ThreadPool
 		~ThreadPool();
 		int idleThreadNum();
 		//往任务队列中推送任务
-		template<typename F, typename ...Args>
-		auto commit(F&& f, Args&&... args)->std::future<decltype(forward<F>(f)(forward<Args>(args)...))>
+		template<typename F, typename ...Args> 
+		auto commit(F&& f, Args&&... args)->
+			std::future<decltype(forward<F>(f)(forward<Args>(args)...))>
 		{
+			
 			using RetType = decltype(forward<F>(f)(forward<Args>(args)...));
+			if (m_stop.load())
+			{
+				return std::future<RetType>{};//???这写是用{}的初始化功能吗???
+			}
 			//将任务放置到任务队列中
-			auto ptrTask = make_shared<packaged_task<RetType()>>(std::forward<F>(f), std::forward<Args>(args)...);
+			auto ptrTask = make_shared<packaged_task<RetType()>>(std::bind(std::forward<F>(f), std::forward<Args>(args)...));
 			future<RetType> retFuture = ptrTask->get_future();
 			unique_lock<mutex>ulock(m_mutex);
 			
@@ -32,6 +38,8 @@ namespace ThreadPool
 
 			return retFuture;
 		}
+
+		
 	public:
 		static ThreadPool& Instance();
 	private:

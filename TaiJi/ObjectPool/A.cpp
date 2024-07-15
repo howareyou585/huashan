@@ -4,7 +4,8 @@ using namespace std;
 namespace TaiJi
 {
 	//ObjectPool<A, ArrayAllocator<A, 10>> A::m_pool;
-	ObjectPool<A, HeapAlloctor<A, 10>> A::m_pool;
+	//ObjectPool<A, HeapAlloctor<A, 10>> A::m_pool;
+	ObjectPool<A, StackAllocator<A, max_size>>A::m_pool;
 	A::A()
 	{
 		cout << "A::A()" << endl;
@@ -14,6 +15,16 @@ namespace TaiJi
 	A::~A()
 	{
 		cout << "A::~A()" << endl;
+	}
+
+	void A::SetState(int state)
+	{
+		m_state = state;
+	}
+
+	int A::GetState()
+	{
+		return m_state;
 	}
 
 	void * A::operator new(size_t size)

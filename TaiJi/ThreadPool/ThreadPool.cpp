@@ -12,6 +12,7 @@ namespace ThreadPool
 		{
 			m_threadNum = num;
 		}
+		start();
 	}
 
 	void ThreadPool::start()
@@ -21,7 +22,7 @@ namespace ThreadPool
 			//向线程池中添加工作线程
 			m_pool.emplace_back([this]() {
 				
-				while (!this->m_stop.load())
+				while (!this->m_stop.load())//检查是否要退出线程池
 				{
 					Task task;
 					{

@@ -1,29 +1,35 @@
-﻿// ObjectPool.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+﻿// SpinLock.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
+
 #include <iostream>
-#include "A.h"
-using namespace TaiJi;
+#include "SpinLock.h"
+#include <thread>
+using namespace std;
 int main()
 {
-	A *ptrArray[max_size] = { nullptr };
-	for (int i = 0; i < max_size; i++)
-	{
-		A * ptrAObj = new A();
-		ptrAObj->SetState(rand()%max_size);
-		int val = ptrAObj->GetState();
-		cout << val << endl;
-		//ptrArray[i] = ptrAObj;
-		// ptrAObj;
-	}
-	for (int i = 0; i < max_size; i++)
-	{
-		//ptrAObj;
-		A *  ptrAObj = ptrArray[i];
-		//A * ptrAObj = new A();
-		delete ptrAObj;
-	}
-	
-	
+	SpinLock spinlock;
+	thread t1([&spinlock] {
+		spinlock.lock();
+		for (int i = 0; i < 3; i++) {
+
+			this_thread::sleep_for(std::chrono::milliseconds(1000));
+			cout << "*";
+		}
+		cout << endl;
+		spinlock.unlock();
+		});
+	thread t2([&spinlock] {
+		spinlock.lock();
+		for (int i = 0; i < 3; i++) {
+
+			this_thread::sleep_for(std::chrono::milliseconds(1000));
+			cout << "-";
+		}
+		cout << endl;
+		spinlock.unlock();
+		});
+	t1.join();
+	t2.join();
     std::cout << "Hello World!\n"; 
 }
 
