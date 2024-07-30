@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ObjectPool", "ObjectPool\Ob
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpinLock", "SpinLock\SpinLock.vcxproj", "{384D9EF7-B2E0-424D-8CEC-6692AD017DBD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Logger", "Logger\Logger.vcxproj", "{6FD7CDA0-700D-4218-A0FB-671632D1DFAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{384D9EF7-B2E0-424D-8CEC-6692AD017DBD}.Release|x64.Build.0 = Release|x64
 		{384D9EF7-B2E0-424D-8CEC-6692AD017DBD}.Release|x86.ActiveCfg = Release|Win32
 		{384D9EF7-B2E0-424D-8CEC-6692AD017DBD}.Release|x86.Build.0 = Release|Win32
+		{6FD7CDA0-700D-4218-A0FB-671632D1DFAD}.Debug|x64.ActiveCfg = Debug|x64
+		{6FD7CDA0-700D-4218-A0FB-671632D1DFAD}.Debug|x64.Build.0 = Debug|x64
+		{6FD7CDA0-700D-4218-A0FB-671632D1DFAD}.Debug|x86.ActiveCfg = Debug|Win32
+		{6FD7CDA0-700D-4218-A0FB-671632D1DFAD}.Debug|x86.Build.0 = Debug|Win32
+		{6FD7CDA0-700D-4218-A0FB-671632D1DFAD}.Release|x64.ActiveCfg = Release|x64
+		{6FD7CDA0-700D-4218-A0FB-671632D1DFAD}.Release|x64.Build.0 = Release|x64
+		{6FD7CDA0-700D-4218-A0FB-671632D1DFAD}.Release|x86.ActiveCfg = Release|Win32
+		{6FD7CDA0-700D-4218-A0FB-671632D1DFAD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

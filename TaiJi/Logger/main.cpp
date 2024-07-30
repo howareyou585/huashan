@@ -3,9 +3,13 @@
 
 
 #include <iostream>
-
+#include "Logger.h"
+using namespace Taiji::utility;
 int main()
 {
+	Logger::Instance()->Open("./logger.txt");
+	Logger::Instance()->Close();
+	
     std::cout << "Hello World!\n"; 
 }
 
