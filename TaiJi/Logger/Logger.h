@@ -22,7 +22,7 @@ namespace Taiji
 		
 		public:
 			
-			void Log(Level level, const char * file, int line, const char format, ...);// 变参的定义方式。
+			void Log(Level level, const char * file, int line, const char* format, ...);// 变参的定义方式。
 		public:
 			static Logger* Instance();//单例模式
 			void Open(const string& filename);

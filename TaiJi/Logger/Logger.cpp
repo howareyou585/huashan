@@ -1,5 +1,6 @@
 #include "Logger.h"
 #include <iostream>
+#include <time.h>
 using namespace std;
 namespace Taiji
 {
@@ -9,8 +10,20 @@ namespace Taiji
 		const char* Logger::s_level[LEVEL_COUNT] = { "DEBUG","INFO","WRAN","ERROR","FATAL" };
 		//等级 文件 行号 内容 
 
-		void Logger::Log(Level level, const char * file, int line, const char format, ...)
+		void Logger::Log(Level level, const char * file, int line, const char *format, ...)
 		{
+			if (m_fout.fail())
+			{
+				throw logic_error("open file fail:" + m_filename);
+			}
+			time_t ticks = time(NULL);
+			auto tm = localtime(&ticks);
+			char buffer[32];
+			memset(buffer, 0, sizeof(buffer));
+			strftime(buffer, sizeof(buffer), "%Y-%M-%d %H:%M:%S", tm);
+			
+			m_fout.write(buffer, sizeof(buffer));
+			m_fout.flush();
 		}
 		//单例模式。
 		Logger * Logger::Instance()
@@ -29,6 +42,7 @@ namespace Taiji
 			{
 				throw logic_error("open file error:" + filename);
 			}
+			
 		}
 		void Logger::Close()
 		{

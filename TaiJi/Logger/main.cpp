@@ -8,6 +8,7 @@ using namespace Taiji::utility;
 int main()
 {
 	Logger::Instance()->Open("./logger.txt");
+	Logger::Instance()->Log(Logger::Level::DEBUG, "", 1, "hello");
 	Logger::Instance()->Close();
 	
     std::cout << "Hello World!\n"; 
